@@ -1,4 +1,4 @@
-<x-layout>
+<x-app-layout>
     <!--Recordar pulir bien la parte de HTML y CSS-->
     <div class="note-container">
         <a href="{{ route('note.create')}}" class="new-note-btn">
@@ -25,4 +25,4 @@
 
         {{ $notes->links() }}
     </div>
-</x-layout>
+</x-app-layout>

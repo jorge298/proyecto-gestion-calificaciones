@@ -12,8 +12,10 @@ class NoteController extends Controller
      */
     public function index()
     {
-        $notes = Note::query()->orderBy("created_at","desc")->paginate();
-        //dd($notes);
+        $notes = Note::query()
+            ->where('user_id', request()->user()->id)
+            ->orderBy("created_at","desc")
+            ->paginate();
         return view('note.index', ['notes' => $notes]);
     }
 
