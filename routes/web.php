@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::redirect('/','/note')->name('dashboard');
 
-Route::middleware('auth', 'verified')->group(function (){
+Route::middleware(['auth', 'verified'])->group(function (){
 
     //Route::get('/note', [NoteController::class,'index'])->name('note.index');
     //Route::get('/note/create', [NoteController::class,'create'])->name('note.create');
